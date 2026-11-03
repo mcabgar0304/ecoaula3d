@@ -60,7 +60,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #9ab58d; outline-off
 }
 .header-inner { min-height: 84px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--forest-deep); flex-shrink: 0; }
-.brand-symbol { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--green); border-radius: 50%; color: var(--green); font-size: 29px; line-height: 1; transform: rotate(-24deg); }
+.brand-symbol { width: 52px; height: 52px; display: block; object-fit: contain; }
 .brand-name { font-size: 17px; letter-spacing: 0.16em; line-height: 1.25; }
 .brand-name strong { letter-spacing: 0.06em; }
 .brand-name small { display: block; margin-top: 4px; font-size: 9px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
@@ -344,7 +344,7 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
   .header-inner { min-height: 72px; }
   .desktop-nav { display: none; }
   .mobile-menu { display: block; }
-  .brand-symbol { width: 35px; height: 35px; font-size: 25px; }
+  .brand-symbol { width: 46px; height: 46px; }
   .brand-name { font-size: 15px; }
   .hero { padding-top: 55px; padding-bottom: 50px; }
   .hero-grid { grid-template-columns: 1fr; gap: 22px; }
@@ -428,7 +428,7 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
 <header class="site-header" id="top">
 <div class="container header-inner">
 <a aria-label="EcoAula 3D, ir al inicio" class="brand" href="index.html#inicio">
-<span aria-hidden="true" class="brand-symbol">↻</span>
+<img alt="" aria-hidden="true" class="brand-symbol" src="images/ecoaula3d_logo_circular.png">
 <span class="brand-name">ECOAULA <strong>3D</strong><small>Tecnología con propósito</small></span>
 </a>
 <nav aria-label="Navegación principal" class="desktop-nav">
@@ -461,6 +461,6 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
 </div>
 </div>
 </section></main><footer class="site-footer">
-<div class="container footer-main"><a class="brand brand-footer" href="index.html#inicio"><span aria-hidden="true" class="brand-symbol">↻</span><span class="brand-name">ECOAULA <strong>3D</strong><small>Tecnología con propósito</small></span></a><p>Convertir residuos en oportunidades de aprendizaje.</p><a class="back-top" href="index.html#inicio">Volver arriba ↑</a></div>
+<div class="container footer-main"><a class="brand brand-footer" href="index.html#inicio"><img alt="" aria-hidden="true" class="brand-symbol" src="images/ecoaula3d_logo_circular.png"><span class="brand-name">ECOAULA <strong>3D</strong><small>Tecnología con propósito</small></span></a><p>Convertir residuos en oportunidades de aprendizaje.</p><a class="back-top" href="index.html#inicio">Volver arriba ↑</a></div>
 <div class="container footer-bottom"><span>Proyecto emprendedor · EcoAula 3D</span><span>Marcos Cabello García · Mirian Tirado Domínguez</span><span>Reciclar · Diseñar · Aprender</span></div>
 </footer></body></html>
