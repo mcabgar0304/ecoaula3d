@@ -290,13 +290,27 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
 
 /* 13. MODELO CANVAS */
 .canvas-section { padding-top: 0; }
-.canvas-inner { display: grid; grid-template-columns: 1fr 260px; gap: 60px; align-items: center; padding: 42px 48px; border: 1px solid var(--line); border-radius: var(--radius-large); background: #eff2e9; }
-.canvas-inner > div:first-child { max-width: 660px; }
-.canvas-inner h2 { font-size: 42px; }
-.canvas-inner p:last-child { margin: 0; color: var(--muted); font-size: 12px; }
-.canvas-mark { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 225px; height: 160px; padding: 7px; border: 2px solid #809678; border-radius: 10px; transform: rotate(3deg); }
-.canvas-mark span { border: 1px solid #a8b9a0; border-radius: 3px; }
-.canvas-mark b { position: absolute; inset: 37px 54px; display: grid; place-content: center; border-radius: 50%; background: var(--forest); color: var(--white); text-align: center; font-size: 9px; letter-spacing: .12em; }
+.canvas-heading { margin-bottom: 30px; }
+.canvas-heading h2 { font-size: 42px; }
+.canvas-heading .section-intro { max-width: 720px; }
+.canvas-board { display: grid; grid-template-columns: 1.05fr 1.05fr 1.25fr 1.05fr 1.05fr; grid-template-areas: "partners activities value relationships segments" "partners resources value channels segments" "costs costs costs revenue revenue"; gap: 12px; }
+.canvas-card { min-width: 0; padding: 19px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-medium); }
+.canvas-card h3 { margin: 8px 0 9px; color: var(--forest); font-size: 16px; }
+.canvas-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.canvas-card-index { color: var(--green); font-size: 8px; font-weight: 700; letter-spacing: .13em; }
+.canvas-partners { grid-area: partners; }
+.canvas-activities { grid-area: activities; }
+.canvas-resources { grid-area: resources; }
+.canvas-value { grid-area: value; display: flex; flex-direction: column; justify-content: center; background: var(--forest); border-color: var(--forest); }
+.canvas-value .canvas-card-index { color: #c2d5b7; }
+.canvas-value h3 { color: var(--white); font-family: Georgia, 'Times New Roman', serif; font-size: 22px; }
+.canvas-value p { color: #e0e8dc; }
+.canvas-relationships { grid-area: relationships; }
+.canvas-channels { grid-area: channels; }
+.canvas-segments { grid-area: segments; }
+.canvas-costs { grid-area: costs; }
+.canvas-revenue { grid-area: revenue; }
+.canvas-note { margin: 13px 0 0; color: var(--muted); font-size: 10px; }
 
 /* 14. CONTACTO Y PIE DE PÁGINA */
 .contact-section { background: var(--forest); color: var(--white); }
@@ -335,6 +349,7 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
   .metrics-copy { grid-column: 1 / -1; }
   .metric:first-of-type { border-left: 0; padding-left: 0; }
   .digital-grid { gap: 45px; }
+  .canvas-board { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-areas: "partners activities value" "partners resources value" "relationships channels segments" "costs costs revenue"; }
   .contact-inner { gap: 40px; }
 }
 
@@ -384,8 +399,11 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
   .digital-grid { grid-template-columns: 1fr; gap: 33px; }
   .team-card { padding: 24px; }
   .canvas-section { padding-top: 0; }
-  .canvas-inner { grid-template-columns: 1fr; gap: 28px; padding: 27px; }
-  .canvas-mark { margin-inline: auto; }
+  .canvas-heading h2 { font-size: 36px; }
+  .canvas-board { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: none; }
+  .canvas-card { grid-area: auto; padding: 16px; }
+  .canvas-value { grid-row: span 2; }
+  .canvas-costs, .canvas-revenue { grid-column: 1 / -1; }
   .contact-inner { grid-template-columns: 1fr; gap: 35px; }
   .contact-card { padding: 24px; }
   .footer-main { align-items: flex-start; flex-direction: column; }
@@ -396,6 +414,9 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 17px; }
   .hero-art { margin-left: -15px; margin-right: -15px; transform: scale(.78); min-height: 340px; margin-bottom: -50px; }
   .process-line { grid-template-columns: 1fr; }
+  .canvas-board { grid-template-columns: 1fr; }
+  .canvas-value { grid-row: auto; }
+  .canvas-costs, .canvas-revenue { grid-column: auto; }
   .process-step { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: start; }
   .process-number { grid-row: span 3; margin: 0; }
   .process-icon { display: none; }
@@ -451,7 +472,21 @@ h4 { margin-bottom: 8px; font-size: 12px; letter-spacing: 0.03em; }
 <p class="team-note">Las funciones se han combinado a partir de los documentos del proyecto, en los que algunas tareas digitales aparecen compartidas entre ambos integrantes.</p>
 </div>
 </section><section class="canvas-section section-pad" id="canvas">
-<div class="container canvas-inner"><div><p class="eyebrow">08 / Modelo de negocio</p><h2>Modelo <span>Canvas.</span></h2><p>El equipo ha trabajado y completado la plantilla del Modelo Canvas físicamente en clase. Como los documentos digitales consultados no detallan el contenido de sus bloques, esta web no añade información inventada.</p></div><div aria-hidden="true" class="canvas-mark"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><b>IDEA<br/>·<br/>VALOR</b></div></div>
+<div class="container">
+<div class="section-heading canvas-heading"><p class="eyebrow">08 / Modelo de negocio</p><h2>Modelo <span>Canvas.</span></h2><p class="section-intro">Una visión de cómo EcoAula 3D crea y acerca recursos educativos sostenibles a los centros escolares.</p></div>
+<div class="canvas-board">
+<article class="canvas-card canvas-partners"><span class="canvas-card-index">01 / ALIANZAS</span><h3>Socios clave</h3><p>Centros educativos y comunidad escolar para recoger botellas PET, probar los recursos y acercarlos al aula. Colaboraciones con proveedores de equipos y materiales para hacer posible la transformación.</p></article>
+<article class="canvas-card canvas-activities"><span class="canvas-card-index">02 / OPERACIONES</span><h3>Actividades clave</h3><p>Recoger y preparar PET, transformarlo en filamento, diseñar modelos 3D y fabricar y revisar piezas educativas.</p></article>
+<article class="canvas-card canvas-resources"><span class="canvas-card-index">03 / CAPACIDADES</span><h3>Recursos clave</h3><p>Botellas PET, herramientas de transformación, impresora 3D, diseños digitales y conocimientos técnicos y educativos.</p></article>
+<article class="canvas-card canvas-value"><span class="canvas-card-index">04 / PROPUESTA</span><h3>Aprender con recursos que dan una segunda vida al plástico.</h3><p>Material didáctico 3D, visual y manipulable, elaborado a partir de PET reciclado y pensado para las necesidades y presupuestos de los centros.</p></article>
+<article class="canvas-card canvas-relationships"><span class="canvas-card-index">05 / VÍNCULO</span><h3>Relación con clientes</h3><p>Atención directa, consulta de necesidades y preparación de modelos adaptados al uso educativo solicitado.</p></article>
+<article class="canvas-card canvas-channels"><span class="canvas-card-index">06 / DIFUSIÓN</span><h3>Canales</h3><p>Contacto directo con colegios e institutos, página web y redes sociales para presentar productos, responder consultas y recibir pedidos.</p></article>
+<article class="canvas-card canvas-segments"><span class="canvas-card-index">07 / DESTINATARIOS</span><h3>Segmentos de clientes</h3><p>Colegios e institutos; profesorado de Ciencias, Matemáticas y Tecnología; y comunidades educativas interesadas en el aprendizaje práctico y la sostenibilidad.</p></article>
+<article class="canvas-card canvas-costs"><span class="canvas-card-index">08 / INVERSIÓN</span><h3>Estructura de costes</h3><p>Equipos y mantenimiento, electricidad, preparación y transformación del PET, consumibles de impresión, embalaje y tiempo de diseño y fabricación.</p></article>
+<article class="canvas-card canvas-revenue"><span class="canvas-card-index">09 / INGRESOS</span><h3>Fuentes de ingresos previstas</h3><p>Venta bajo pedido de recursos didácticos impresos en 3D, filamento reciclado y piezas personalizadas para centros educativos.</p></article>
+</div>
+<p class="canvas-note">Las colaboraciones y fuentes de ingresos se presentan como vías previstas del modelo, no como acuerdos o ventas ya realizados.</p>
+</div>
 </section></main><footer class="site-footer">
 <div class="container footer-main"><a class="brand brand-footer" href="index.html#inicio"><img alt="" aria-hidden="true" class="brand-symbol" src="images/ecoaula3d_logo_circular.png"><span class="brand-name">ECOAULA <strong>3D</strong><small>Tecnología con propósito</small></span></a><p>Convertir residuos en oportunidades de aprendizaje.</p><a class="back-top" href="index.html#inicio">Volver arriba ↑</a></div>
 <div class="container footer-bottom"><span>Proyecto emprendedor · EcoAula 3D</span><span>Marcos Cabello García · Mirian Tirado Domínguez</span><span>Reciclar · Diseñar · Aprender</span></div>
